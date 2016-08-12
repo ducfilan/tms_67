@@ -10,7 +10,6 @@ $ ->
         error: (jqXHR, textStatus, errorThrown) ->
           alert "AJAX Error: #{textStatus}"
         success: (data, textStatus, jqXHR) ->
-          debugger
           self.parent().html(data.htmlText)
 
     e.preventDefault()

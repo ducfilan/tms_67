@@ -1,0 +1,29 @@
+
+
+$(".course_action_<%= @course.id %>").html(
+  "<%=
+    escape_javascript(
+      case @course.status
+      when "pending"
+        link_to t("admin.courses.course_item.start_course"),
+          admin_course_path(@course, type: Settings.status.started),
+          remote: true,
+          data: {
+            confirm: t("admin.courses.course_item.confirm_start")
+          },
+          method: :patch, class: "btn btn-primary btn_start_course"
+      when "started"
+        link_to t("admin.courses.course_item.finish_course"),
+          admin_course_path(@course, type: Settings.status.finished),
+          remote: true,
+          data: {
+            confirm: t("admin.courses.course_item.confirm_finish")
+          },
+          method: :patch, class: "btn btn-danger"
+      when "finished"
+        button_tag t("admin.courses.course_item.inactive_course"),
+          class: "btn btn-default disabled"
+      end
+    )
+  %>"
+);

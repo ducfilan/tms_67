@@ -166,7 +166,7 @@ en:
       edit_course: "Your course is successfully updated!"
     error_messages:
       start_after_end: "Start date cannot be after end date!"
-      error_occurred: "Some error occured! Please check and try again!"
+      error_occurred: "Error occurred! Please check and try again!"
   time_format: "%c"
   date_format: "%Y/%m/%d"
   error_messages: "The form contains %{plural}."
