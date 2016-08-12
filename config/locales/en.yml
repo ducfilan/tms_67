@@ -141,6 +141,7 @@ en:
           subject_name: "Subject name"
           instructions: "Subject instructions"
       new_course: "New course"
+      edit_course: "Edit course"
       title: "Course"
       all_courses: "All courses"
       course_item:
@@ -148,7 +149,11 @@ en:
         start_date: "Start date"
         end_date: "End date"
         start_course: "Start course"
+        finish_course: "Finish course"
+        inactive_course: "Inactive course"
         trainees: "trainees"
+        confirm_start: "Are you sure you want to start this course?"
+        confirm_finish: "Are you sure you want to finish this course?"
         delete: "Delete"
         Edit: "Edit"
       confirm_delete: "Are you sure you want to delete this course?"
@@ -158,8 +163,10 @@ en:
     reset: "Reset"
     flash:
       create_course: "Your course is successfully created!"
+      edit_course: "Your course is successfully updated!"
     error_messages:
       start_after_end: "Start date cannot be after end date!"
+      error_occurred: "Some error occured! Please check and try again!"
   time_format: "%c"
   date_format: "%Y/%m/%d"
   error_messages: "The form contains %{plural}."

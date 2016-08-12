@@ -45,7 +45,8 @@
         <%= f.fields_for :course_subjects do |builder| %>
           <tr>
             <td class="center">
-              <%= builder.check_box :_destroy, {}, 0, 1 %>
+              <%= builder.check_box :_destroy,
+                {checked: builder.object.persisted?}, 0, 1 %>
             </td>
             <td>
               <%= builder.object.subject.name %>

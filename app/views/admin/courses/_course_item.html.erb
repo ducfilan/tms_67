@@ -9,7 +9,10 @@
         <span class="glyphicon glyphicon glyphicon-cog"
           data-toggle="dropdown" aria-hidden="true"></span>
         <ul class="dropdown-menu">
-          <li><a href="#"><%= t "admin.courses.course_item.Edit" %></a></li>
+          <li>
+            <%= link_to t("admin.courses.course_item.Edit"),
+              edit_admin_course_path(course) %>
+          </li>
           <li>
             <%= link_to t("admin.courses.course_item.delete"),
               admin_course_path(course),
@@ -42,17 +45,33 @@
           </span>
         </div>
 
-        <div class="col-md-4 course_actions">
+        <div class="col-md-4 course_action_wrapper">
           <p class="number_of_trainees">
             <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
             <%= course.users.count %>
             <%= t "admin.courses.course_item.trainees" %>
           </p>
 
-          <div class="center">
-            <button class="btn btn-primary">
-              <%= t "admin.courses.course_item.start_course" %>
-            </button>
+          <div class="col-md-12 course_action_<%= course.id %>">
+            <% case course.status %>
+            <% when "pending" %>
+              <%= link_to t("admin.courses.course_item.start_course"),
+                admin_course_path(course, type: Settings.status.started),
+                data: {
+                  confirm: t("admin.courses.course_item.confirm_start")
+                },
+                class: "btn btn-primary" %>
+            <% when "started" %>
+              <%= link_to t("admin.courses.course_item.finish_course"),
+                admin_course_path(course, type: Settings.status.finished),
+                data: {
+                  confirm: t("admin.courses.course_item.confirm_finish")
+                },
+                class: "btn btn-danger" %>
+            <% when "finished" %>
+                <%= button_tag t("admin.courses.course_item.inactive_course"),
+                  class: "btn btn-default disabled" %>
+            <% end %>
           </div>
         </div>
 

@@ -9,3 +9,7 @@ role:
   trainee: "trainee"
 pagination:
   size: 15
+status:
+  pending: 0
+  started: 1
+  finished: 2
