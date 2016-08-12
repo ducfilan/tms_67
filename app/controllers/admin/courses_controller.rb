@@ -1,6 +1,8 @@
 class Admin::CoursesController < ApplicationController
 
   def index
+    @courses = Course.order("created_at DESC")
+      .paginate page: params[:page], per_page: Settings.pagination.size
   end
 
   def new

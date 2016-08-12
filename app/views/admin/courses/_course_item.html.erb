@@ -1,0 +1,59 @@
+<div class="course_item_wrapper col-md-6">
+  <div class="course_item">
+    <div class="col-md-12">
+      <h2 class="course_name">
+        <%= link_to course.name, admin_course_path(course) %></h2>
+    </div>
+    <div class="col-md-12">
+      <div class="course_created_date">
+        <%= t "admin.courses.course_item.date_created" %>
+        <%= course.created_at.strftime(t "date_format") %>
+      </div>
+
+      <div class="course_instruction">
+        <p><%= course.instructions %></p>
+      </div>
+
+      <div class="course_info">
+        <div class="col-md-4 start_course_date">
+          <div class="popover top">
+            <div class="arrow"></div>
+            <div class="popover-content">
+              <%= course.start_date.strftime(t "date_format") %>
+            </div>
+          </div>
+          <span class="label label-success">
+            <%= t "admin.courses.course_item.start_date" %>
+          </span>
+        </div>
+
+        <div class="col-md-4 course_actions">
+          <p class="number_of_trainees">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            <%= course.users.count %>
+            <%= t "admin.courses.course_item.trainees" %>
+          </p>
+
+          <div class="col-md-12">
+            <button class="btn btn-primary">
+              <%= t "admin.courses.course_item.start_course" %>
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-4 end_course_date">
+          <div class="popover top">
+            <div class="arrow"></div>
+            <div class="popover-content">
+              <%= course.end_date.strftime(t "date_format") %>
+            </div>
+          </div>
+
+          <span class="label label-warning">
+            <%= t "admin.courses.course_item.end_date" %>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

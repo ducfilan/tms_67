@@ -1,0 +1,8 @@
+<%= provide :title, t("admin.courses.all_courses") %>
+<div class="page-header">
+  <h1><%= t "admin.courses.all_courses" %></h1>
+</div>
+
+<div id="list-courses" class="row">
+  <%= render partial: "course_item", collection: @courses, as: "course" %>
+</div>

@@ -141,6 +141,13 @@ en:
           instructions: "Subject instructions"
       new_course: "New course"
       title: "Course"
+      all_courses: "All courses"
+      course_item:
+        date_created: "Date created:"
+        start_date: "Start date"
+        end_date: "End date"
+        start_course: "Start course"
+        trainees: "trainees"
     submit: "Submit"
     reset: "Reset"
     flash:
@@ -148,5 +155,6 @@ en:
     error_messages:
       start_after_end: "Start date cannot be after end date!"
   time_format: "%c"
+  date_format: "%Y/%m/%d"
   error_messages: "The form contains %{plural}."
   error_text: "error"
